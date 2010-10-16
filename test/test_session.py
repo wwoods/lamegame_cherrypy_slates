@@ -56,6 +56,8 @@ class SessionRamTest(unittest.TestCase):
     def test_put_expire(self):
         self.assertEqual(make_request('/session/put', { 'key': 'test', 'data': '1234' }), 'ok')
         self.assertEqual(make_request('/session/get', { 'key': 'test' }), '1234')
+        self.assertEqual(make_request('/session/put', { 'key': 'test2', 'data': '4321' }), 'ok')
+        self.assertEqual(make_request('/session/get', { 'key': 'test2' }), '4321')
         self.assertEqual(make_request('/session/expire'), 'ok')
         self.assertEqual(make_request('/session/get', { 'key': 'test' }), 'null')
 

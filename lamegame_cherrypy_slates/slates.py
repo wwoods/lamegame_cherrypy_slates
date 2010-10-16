@@ -324,13 +324,16 @@ class PymongoSlate(SlateStorage):
             self._id = new_dict['_id']
         else:
             self._id = core['_id']
-            updates = {
-                '$set': { 
-                    'time': now
-                    , 'expire': now + datetime.timedelta(minutes=timeout)
+            half = core['expire'] - core['time']
+            up_time = core['time'] + (half // 2)
+            if up_time < now:
+                updates = {
+                    '$set': { 
+                        'time': now
+                        , 'expire': now + datetime.timedelta(minutes=timeout)
+                        }
                     }
-                }
-            self.conn.update({ '_id': self._id }, updates)
+                self.conn.update({ '_id': self._id }, updates)
 
     def __str__(self):
         return "PYMONGO{0}".format(self._id)
