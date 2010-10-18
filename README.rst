@@ -28,6 +28,7 @@ Example Usage
 Set the following in your CherryPy 3 config file:
 
 ::
+
     tools.lg_slates.on: True
     tools.lg_slates.session_timeout: 120 #Use a 2-hour timeout instead of 
                                          #default 1hr
