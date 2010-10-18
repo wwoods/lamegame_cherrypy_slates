@@ -272,7 +272,6 @@ class RamSlate(SlateStorage):
     @classmethod
     def clean_up(cls):
         """Clean up expired sessions."""
-        now = datetime.datetime.now()
         for id in list(cls.cache.keys()):
             if cls.is_expired(id):
                 cls._expire(id)
@@ -309,7 +308,7 @@ class PymongoSlate(SlateStorage):
             { 'name': self.name }, { '_id': 1, 'time': 1, 'expire': 1 }
             )
 
-        now = datetime.datetime.now()
+        now = datetime.datetime.utcnow()
 
         if core is None or core['expire'] < now:
             new_dict = {
@@ -394,13 +393,13 @@ class PymongoSlate(SlateStorage):
         doc = cls.conn.find_one({ 'name': name }, { 'expire': 1 })
         if doc is None:
             return True
-        if doc['expire'] < datetime.datetime.now():
+        if doc['expire'] < datetime.datetime.utcnow():
             return True
         return False
 
     @classmethod
     def clean_up(cls):
-        now = datetime.datetime.now()
+        now = datetime.datetime.utcnow()
         cls.conn.remove({ 'expire': { '$lt': now } })
         log('Cleaned expired sessions')
 
