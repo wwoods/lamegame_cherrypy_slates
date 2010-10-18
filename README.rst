@@ -30,8 +30,8 @@ Set the following in your CherryPy 3 config file:
 ::
 
     tools.lg_slates.on: True
-    tools.lg_slates.session_timeout: 120 #Use a 2-hour timeout instead of 
-                                         #default 1hr
+    tools.lg_slates.session_timeout: 120    #Use a 2-hour timeout instead of 
+                                            #default 1hr
     tools.lg_slates.storage_type: 'pymongo' #For using mongodb
     tools.lg_slates.storage_conf: {
         'host': None              #pymongo host address (None for localhost)
