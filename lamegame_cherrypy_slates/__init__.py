@@ -8,6 +8,7 @@ tools.lg_slates.storage_type may be specified to change the storage medium (defa
 import cherrypy
 from .common import *
 from .tool import SlateTool
+from .slates import Slate
 
 cherrypy.tools.lg_slates = SlateTool()
 
