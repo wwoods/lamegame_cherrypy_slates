@@ -1,0 +1,225 @@
+running test
+running egg_info
+writing lamegame_cherrypy_slates.egg-info/PKG-INFO
+writing top-level names to lamegame_cherrypy_slates.egg-info/top_level.txt
+writing dependency_links to lamegame_cherrypy_slates.egg-info/dependency_links.txt
+writing entry points to lamegame_cherrypy_slates.egg-info/entry_points.txt
+reading manifest file 'lamegame_cherrypy_slates.egg-info/SOURCES.txt'
+writing manifest file 'lamegame_cherrypy_slates.egg-info/SOURCES.txt'
+running build_ext
+Test auth caching ... [19/Oct/2010:06:59:28] ENGINE Bus STARTING
+CherryPy Checker:
+The Application mounted at '' has an empty config.
+
+[19/Oct/2010:06:59:28] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:28] ENGINE Started monitor thread 'Autoreloader'.
+[19/Oct/2010:06:59:28] ENGINE Serving on 127.0.0.1:8080
+[19/Oct/2010:06:59:28] ENGINE Bus STARTED
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES New session (no cookie)
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Session None expired -> 1620292a6f5350cb58a05d06eed7ecc2f0f02004
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000000
+127.0.0.1 - - [19/Oct/2010:06:59:29] "POST /session/put HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES ID obtained from request.cookie: '1620292a6f5350cb58a05d06eed7ecc2f0f02004'
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000000
+127.0.0.1 - - [19/Oct/2010:06:59:29] "POST /session/get HTTP/1.1" 200 16 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:29] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) shut down
+[19/Oct/2010:06:59:29] ENGINE Stopped thread 'Autoreloader'.
+[19/Oct/2010:06:59:29] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:29] ENGINE Stopped thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:29] ENGINE Bus STOPPED
+ok
+test_index (test.test_session.SessionMongoDbTest) ... [19/Oct/2010:06:59:29] ENGINE Bus STARTING
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread 'Autoreloader'.
+[19/Oct/2010:06:59:29] ENGINE Serving on 127.0.0.1:8080
+[19/Oct/2010:06:59:29] ENGINE Bus STARTED
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES ID obtained from request.cookie: '1620292a6f5350cb58a05d06eed7ecc2f0f02004'
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000000
+127.0.0.1 - - [19/Oct/2010:06:59:29] "GET / HTTP/1.1" 200 13 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:29] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) shut down
+[19/Oct/2010:06:59:29] ENGINE Stopped thread 'Autoreloader'.
+[19/Oct/2010:06:59:29] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:29] ENGINE Stopped thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:29] ENGINE Bus STOPPED
+ok
+test_put_expire (test.test_session.SessionMongoDbTest) ... [19/Oct/2010:06:59:29] ENGINE Bus STARTING
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread 'Autoreloader'.
+[19/Oct/2010:06:59:29] ENGINE Serving on 127.0.0.1:8080
+[19/Oct/2010:06:59:29] ENGINE Bus STARTED
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES ID obtained from request.cookie: '1620292a6f5350cb58a05d06eed7ecc2f0f02004'
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000000
+127.0.0.1 - - [19/Oct/2010:06:59:29] "POST /session/put HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES ID obtained from request.cookie: '1620292a6f5350cb58a05d06eed7ecc2f0f02004'
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000000
+127.0.0.1 - - [19/Oct/2010:06:59:29] "POST /session/get HTTP/1.1" 200 4 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES ID obtained from request.cookie: '1620292a6f5350cb58a05d06eed7ecc2f0f02004'
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000000
+127.0.0.1 - - [19/Oct/2010:06:59:29] "POST /session/put HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES ID obtained from request.cookie: '1620292a6f5350cb58a05d06eed7ecc2f0f02004'
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000000
+127.0.0.1 - - [19/Oct/2010:06:59:29] "POST /session/get HTTP/1.1" 200 4 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES ID obtained from request.cookie: '1620292a6f5350cb58a05d06eed7ecc2f0f02004'
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000000
+127.0.0.1 - - [19/Oct/2010:06:59:29] "GET /session/expire HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES New session (no cookie)
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Session None expired -> b4b986048d72a523323f18a54e3df9f4ed7baeb5
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000001
+127.0.0.1 - - [19/Oct/2010:06:59:29] "POST /session/get HTTP/1.1" 200 4 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:29] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) shut down
+[19/Oct/2010:06:59:29] ENGINE Stopped thread 'Autoreloader'.
+[19/Oct/2010:06:59:29] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:29] ENGINE Stopped thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:29] ENGINE Bus STOPPED
+ok
+test_timeout_expire (test.test_session.SessionMongoDbTest) ... [19/Oct/2010:06:59:29] ENGINE Bus STARTING
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:29] ENGINE Started monitor thread 'Autoreloader'.
+[19/Oct/2010:06:59:29] ENGINE Serving on 127.0.0.1:8080
+[19/Oct/2010:06:59:29] ENGINE Bus STARTED
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES ID obtained from request.cookie: 'b4b986048d72a523323f18a54e3df9f4ed7baeb5'
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000001
+127.0.0.1 - - [19/Oct/2010:06:59:29] "GET /session/expire HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES New session (no cookie)
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Session None expired -> 77df37a004f3d383aa26b1fe4ee8d70b071b1a49
+[19/Oct/2010:06:59:29] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda441da96db62d7000002
+127.0.0.1 - - [19/Oct/2010:06:59:29] "GET /session/get_id HTTP/1.1" 200 40 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:32] LGTOOLS.SLATES Cleaned expired sessions
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES New session (no cookie)
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES Session None expired -> 3e6c835b87d31c1ba0d838606d39172fb9ebf0d4
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES Slate loaded: PYMONGO4cbda445da96db62d7000003
+127.0.0.1 - - [19/Oct/2010:06:59:33] "GET /session/get_id HTTP/1.1" 200 40 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:33] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:33] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) shut down
+[19/Oct/2010:06:59:33] ENGINE Stopped thread 'Autoreloader'.
+[19/Oct/2010:06:59:33] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Stopped thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:33] ENGINE Bus STOPPED
+ok
+Test auth caching ... [19/Oct/2010:06:59:33] ENGINE Bus STARTING
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Autoreloader'.
+[19/Oct/2010:06:59:33] ENGINE Serving on 127.0.0.1:8080
+[19/Oct/2010:06:59:33] ENGINE Bus STARTED
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES ID obtained from request.cookie: '3e6c835b87d31c1ba0d838606d39172fb9ebf0d4'
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES Session 3e6c835b87d31c1ba0d838606d39172fb9ebf0d4 expired -> c32e4bcb862f8c57ca7bcda517523530c1c64654
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES Slate loaded: RAM{}
+127.0.0.1 - - [19/Oct/2010:06:59:33] "POST /session/put HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES ID obtained from request.cookie: 'c32e4bcb862f8c57ca7bcda517523530c1c64654'
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES Slate loaded: RAM{u'auth': u'user-ThisIsAUser'}
+127.0.0.1 - - [19/Oct/2010:06:59:33] "POST /session/get HTTP/1.1" 200 16 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:33] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:33] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) shut down
+[19/Oct/2010:06:59:33] ENGINE Stopped thread 'Autoreloader'.
+[19/Oct/2010:06:59:33] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Stopped thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:33] ENGINE Bus STOPPED
+ok
+test_index (test.test_session.SessionRamTest) ... [19/Oct/2010:06:59:33] ENGINE Bus STARTING
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Autoreloader'.
+[19/Oct/2010:06:59:33] ENGINE Serving on 127.0.0.1:8080
+[19/Oct/2010:06:59:33] ENGINE Bus STARTED
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES ID obtained from request.cookie: 'c32e4bcb862f8c57ca7bcda517523530c1c64654'
+[19/Oct/2010:06:59:33] LGTOOLS.SLATES Slate loaded: RAM{u'auth': u'user-ThisIsAUser'}
+127.0.0.1 - - [19/Oct/2010:06:59:33] "GET / HTTP/1.1" 200 13 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:33] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:33] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) shut down
+[19/Oct/2010:06:59:33] ENGINE Stopped thread 'Autoreloader'.
+[19/Oct/2010:06:59:33] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Stopped thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:33] ENGINE Bus STOPPED
+ok
+test_put_expire (test.test_session.SessionRamTest) ... [19/Oct/2010:06:59:33] ENGINE Bus STARTING
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:33] ENGINE Started monitor thread 'Autoreloader'.
+[19/Oct/2010:06:59:34] ENGINE Serving on 127.0.0.1:8080
+[19/Oct/2010:06:59:34] ENGINE Bus STARTED
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES ID obtained from request.cookie: 'c32e4bcb862f8c57ca7bcda517523530c1c64654'
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Slate loaded: RAM{u'auth': u'user-ThisIsAUser'}
+127.0.0.1 - - [19/Oct/2010:06:59:34] "POST /session/put HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES ID obtained from request.cookie: 'c32e4bcb862f8c57ca7bcda517523530c1c64654'
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Slate loaded: RAM{u'test': u'1234', u'auth': u'user-ThisIsAUser'}
+127.0.0.1 - - [19/Oct/2010:06:59:34] "POST /session/get HTTP/1.1" 200 4 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES ID obtained from request.cookie: 'c32e4bcb862f8c57ca7bcda517523530c1c64654'
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Slate loaded: RAM{u'test': u'1234', u'auth': u'user-ThisIsAUser'}
+127.0.0.1 - - [19/Oct/2010:06:59:34] "POST /session/put HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES ID obtained from request.cookie: 'c32e4bcb862f8c57ca7bcda517523530c1c64654'
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Slate loaded: RAM{u'test': u'1234', u'test2': u'4321', u'auth': u'user-ThisIsAUser'}
+127.0.0.1 - - [19/Oct/2010:06:59:34] "POST /session/get HTTP/1.1" 200 4 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES ID obtained from request.cookie: 'c32e4bcb862f8c57ca7bcda517523530c1c64654'
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Slate loaded: RAM{u'test': u'1234', u'test2': u'4321', u'auth': u'user-ThisIsAUser'}
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Expired session-c32e4bcb862f8c57ca7bcda517523530c1c64654
+127.0.0.1 - - [19/Oct/2010:06:59:34] "GET /session/expire HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES New session (no cookie)
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Session None expired -> ec8c40e60fb9757874fa8c4a15152fe675be37ea
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Slate loaded: RAM{}
+127.0.0.1 - - [19/Oct/2010:06:59:34] "POST /session/get HTTP/1.1" 200 4 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:34] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:34] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) shut down
+[19/Oct/2010:06:59:34] ENGINE Stopped thread 'Autoreloader'.
+[19/Oct/2010:06:59:34] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:34] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:34] ENGINE Stopped thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:34] ENGINE Bus STOPPED
+ok
+test_timeout_expire (test.test_session.SessionRamTest) ... [19/Oct/2010:06:59:34] ENGINE Bus STARTING
+[19/Oct/2010:06:59:34] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:34] ENGINE Started monitor thread 'Slate cleanup'.
+[19/Oct/2010:06:59:34] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:34] ENGINE Started monitor thread 'Autoreloader'.
+[19/Oct/2010:06:59:34] ENGINE Serving on 127.0.0.1:8080
+[19/Oct/2010:06:59:34] ENGINE Bus STARTED
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES ID obtained from request.cookie: 'ec8c40e60fb9757874fa8c4a15152fe675be37ea'
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Slate loaded: RAM{}
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Expired session-ec8c40e60fb9757874fa8c4a15152fe675be37ea
+127.0.0.1 - - [19/Oct/2010:06:59:34] "GET /session/expire HTTP/1.1" 200 2 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES New session (no cookie)
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Session None expired -> 4e51ee046ee6ee9faa4e7f52a668ff3fa9d88c07
+[19/Oct/2010:06:59:34] LGTOOLS.SLATES Slate loaded: RAM{}
+127.0.0.1 - - [19/Oct/2010:06:59:34] "GET /session/get_id HTTP/1.1" 200 40 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:37] LGTOOLS.SLATES Cleaned expired sessions
+[19/Oct/2010:06:59:37] LGTOOLS.SLATES Cleaned expired sessions
+[19/Oct/2010:06:59:37] LGTOOLS.SLATES New session (no cookie)
+[19/Oct/2010:06:59:37] LGTOOLS.SLATES Session None expired -> e172218d6660b994ad5b163657422518ad526215
+[19/Oct/2010:06:59:37] LGTOOLS.SLATES Slate loaded: RAM{}
+127.0.0.1 - - [19/Oct/2010:06:59:37] "GET /session/get_id HTTP/1.1" 200 40 "" "Python-urllib/2.6"
+[19/Oct/2010:06:59:37] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:37] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) shut down
+[19/Oct/2010:06:59:37] ENGINE Stopped thread 'Autoreloader'.
+[19/Oct/2010:06:59:37] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:37] ENGINE Stopped thread 'Slate cleanup'.
+[19/Oct/2010:06:59:37] ENGINE Stopped thread '_TimeoutMonitor'.
+[19/Oct/2010:06:59:37] ENGINE Bus STOPPED
+ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 9.070s
+
+OK
+/usr/local/lib/python2.6/dist-packages/CherryPy-3.2.0rc1-py2.6.egg/cherrypy/process/wspbus.py:208: RuntimeWarning: The main thread is exiting, but the Bus is in the states.STOPPED state; shutting it down automatically now. You must either call bus.block() after start(), or call bus.exit() before the main thread exits.
+  "main thread exits." % self.state, RuntimeWarning)
+[19/Oct/2010:06:59:37] ENGINE Bus STOPPING
+[19/Oct/2010:06:59:37] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('127.0.0.1', 8080)) already shut down
+[19/Oct/2010:06:59:37] ENGINE No thread running for None.
+[19/Oct/2010:06:59:37] ENGINE No thread running for Slate cleanup.
+[19/Oct/2010:06:59:37] ENGINE No thread running for Slate cleanup.
+[19/Oct/2010:06:59:37] ENGINE No thread running for None.
+[19/Oct/2010:06:59:37] ENGINE Bus STOPPED
+[19/Oct/2010:06:59:37] ENGINE Bus EXITING
+[19/Oct/2010:06:59:37] ENGINE Bus EXITED

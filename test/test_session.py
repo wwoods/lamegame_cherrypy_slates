@@ -23,6 +23,8 @@ class Root(object):
         @cherrypy.expose
         def put(self, key, data):
             cherrypy.session[key] = data
+            if cherrypy.session[key] != data:
+                return 'Checking value after write - failed'
             return 'ok'
 
         @cherrypy.expose
@@ -69,6 +71,11 @@ class SessionRamTest(unittest.TestCase):
         time.sleep(3.5)
 
         self.assertNotEqual(make_request('/session/get_id'), sess_id)
+
+    def test_auth_get(self):
+        "Test auth caching"
+        self.assertEqual(make_request('/session/put', { 'key': 'auth', 'data': 'user-ThisIsAUser' }), 'ok')
+        self.assertEqual(make_request('/session/get', { 'key': 'auth' }), 'user-ThisIsAUser')
 
 class SessionMongoDbTest(SessionRamTest):
     def setUp(self):

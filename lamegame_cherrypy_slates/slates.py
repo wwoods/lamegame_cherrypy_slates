@@ -149,6 +149,11 @@ class SlateStorage(object): #PY3 , metaclass=cherrypy._AttributeDocstring):
     def __init__(self, name, timeout):
         """Initializes storage for a slate.  Should clear data if expired,
         and update timestamp / timeout.
+
+        timeout may be None for no expiration.
+
+        It is recommended (if possible) to download and cache the "auth" key's
+        value in the initial data request.
         """
         raise NotImplementedError()
 
@@ -224,7 +229,7 @@ class RamSlate(SlateStorage):
         if RamSlate.is_expired(name):
             self.record = self.cache[name] = {}
         else:
-            self.record = self.cache.setdefault('name', {})
+            self.record = self.cache.setdefault(name, {})
 
         self.record['timestamp'] = time.time()
         self.record['timeout'] = timeout
@@ -265,6 +270,8 @@ class RamSlate(SlateStorage):
         obj = cls.cache.get(name, None)
         if obj is None:
             return True
+        if obj['timeout'] is None:
+            return False
         if obj['timestamp'] + obj['timeout'] * 60 < time.time():
             return True
         return False
@@ -303,35 +310,57 @@ class PymongoSlate(SlateStorage):
 
     def __init__(self, name, timeout):
         self.name = name
+        self._cache = { 'auth': None }
         
-        core = self.conn.find_one(
-            { 'name': self.name }, { '_id': 1, 'time': 1, 'expire': 1 }
-            )
-
+        get_fields = {
+            '_id': 1
+            ,'time': 1
+            ,'expire': 1
+            ,'data.auth': 1
+            }
+        core = self.conn.find_one({ 'name': self.name }, get_fields)
         now = datetime.datetime.utcnow()
 
-        if core is None or core['expire'] < now:
+        if core is None or core.get('expire', now) < now:
             new_dict = {
                 'name': self.name
                 ,'time': now
-                ,'expire': now + datetime.timedelta(minutes=timeout)
                 ,'data': {}
                 }
+            if timeout is not None:
+                new_dict['expire'] = now + datetime.timedelta(minutes=timeout)
             if core is not None:
                 new_dict['_id'] = core['_id']
             self.conn.save(new_dict)
             self._id = new_dict['_id']
         else:
             self._id = core['_id']
-            half = (core['expire'] - core['time']) // 2
-            up_time = core['time'] + half
-            if up_time < now:
+            self._cache.update(core.get('data', {}))
+
+            #We also have to handle the case where timeout
+            #has changed from/to None
+            new_exp = missing
+            if 'expire' in core:
+                if timeout is None:
+                    new_exp = None
+                else:
+                    half = (core['expire'] - core['time']) // 2
+                    up_time = core['time'] + half
+                    if up_time < now:
+                        new_exp = now + datetime.timedelta(minutes=timeout)
+            elif timeout is not None: #expire not in core
+                new_exp = now + datetime.timedelta(minutes=timeout)
+
+            if new_exp is not missing:
                 updates = {
                     '$set': {
                         'time': now
-                        , 'expire': now + datetime.timedelta(minutes=timeout)
                         }
                     }
+                if new_exp is not None:
+                    updates['$set']['expire'] = new_exp
+                else:
+                    updates['$unset'] = { 'expire': 1 }
                 self.conn.update({ '_id': self._id }, updates)
 
     def __str__(self):
@@ -341,14 +370,25 @@ class PymongoSlate(SlateStorage):
         return str(self)
 
     def set(self, key, value):
+        pickled = pickle.dumps(value).encode('utf-8')
+
+        if key in self._cache:
+            self._cache[key] = pickled
+
         self.conn.update(
             { '_id': self._id }
-            , { '$set': { 'data.' + key: pickle.dumps(value).encode('utf-8') } }
+            , { '$set': { 'data.' + key: pickled } }
             )
 
     def get(self, key, default):
-        doc = self.conn.find_one({ '_id': self._id }, { 'data.' + key: 1 })
-        result = doc.get('data', {}).get(key, default)
+        if key in self._cache:
+            result = self._cache[key]
+            if result is None:
+                result = default
+        else:
+            doc = self.conn.find_one({ '_id': self._id }, { 'data.' + key: 1 })
+            result = doc.get('data', {}).get(key, default)
+
         if result is not default:
             result = pickle.loads(str(result.decode('utf-8')))
         return result
