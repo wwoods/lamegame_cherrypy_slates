@@ -1,4 +1,5 @@
 build
 dist
+lamegame_cherrypy_slates.egg-info
 *.pyc
 *.swp

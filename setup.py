@@ -35,5 +35,5 @@ setup(name='lamegame_cherrypy_slates',
       entry_points="""
       # -*- Entry points: -*-
       """,
-      test_suite='test'
+      test_suite='tests'
       )
