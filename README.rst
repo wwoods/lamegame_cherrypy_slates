@@ -40,11 +40,11 @@ Set the following in your CherryPy 3 config file:
         ,'collection': 'slates'   #pymongo collection to store slates in
         }
 
-Then make sure that you call **import lamegame_cherrypy_slates** at some point in your python code before engine.start(), and you should be good to go.
+Then make sure that you call **import lg_slates** at some point in your python code before engine.start(), and you should be good to go.
 
 If you'd like to make use of a named slate, for instance to associate user data with an account, do the above setup, and then do something like this in your code::
 
-    import lamegame_cherrypy_slates as lg_slates
+    import lg_slates
     s = lg_slates.Slate(cherrypy.session['username'])
     s['permanentData'] = True
     val = s.pop('permanentData')
